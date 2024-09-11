@@ -14,3 +14,14 @@ class Circle():
 
     def get_area(self):
         return math.pi * self.radius ** 2
+
+    def get_perimeter(self):
+        return 2 * math.pi * self.radius
+
+    def __mul__(self, n):
+        if n <= 0:
+            raise ValueError('n debe ser mayor a 0 para realizar multiplicacion')
+        return Circle(self.radius * n)
+
+    def __str__(self):
+        return '----- Circulo -----\nRadio: %s' % self.radius
